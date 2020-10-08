@@ -1,0 +1,15 @@
+version: '2'
+services:
+  tests:
+    build:
+        context: .
+    volumes:
+      - .:/app
+    command: cargo test -- --nocapture
+
+  format:
+    build:
+        context: .
+    volumes:
+      - .:/app
+    command: cargo fmt -- --verbose
